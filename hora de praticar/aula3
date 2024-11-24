@@ -1,0 +1,122 @@
+// Desafio 1: Calcular a Soma de Números Pares
+function somaPares(n) {
+    let soma = 0;
+    let i = 1;
+    while (i <= n) {
+        if (i % 2 === 0) {
+            soma += i;
+        }
+        i++;
+    }
+    return soma;
+}
+
+// Desafio 2: Calcular o Fatorial de um Número
+function calcularFatorial(n) {
+    let fatorial = 1;
+    for (let i = 1; i <= n; i++) {
+        fatorial *= i;
+    }
+    return fatorial;
+}
+
+// Desafio 3: Imprimir a Tabuada de um Número
+function imprimirTabuada(n) {
+    for (let i = 1; i <= 10; i++) {
+        console.log(`${n} x ${i} = ${n * i}`);
+    }
+}
+
+// Desafio 4: Validação de Senha
+function validarSenha() {
+    const senhaCorreta = "1234"; // Senha esperada
+    const readline = require('readline').createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    const checkSenha = () => {
+        readline.question('Digite sua senha: ', senha => {
+            if (senha === senhaCorreta) {
+                console.log('Senha correta!');
+                readline.close();
+            } else {
+                console.log('Senha incorreta, tente novamente.');
+                checkSenha(); // Solicita a senha novamente
+            }
+        });
+    };
+    checkSenha();
+}
+
+// Desafio 5: Desenhar um Triângulo de Asteriscos
+function desenharTriangulo(n) {
+    for (let linha = 1; linha <= n; linha++) {
+        console.log('*'.repeat(linha));
+    }
+}
+
+// Desafio 6: Contar Números Positivos e Negativos
+function contarPositivosNegativos(numeros) {
+    let positivos = 0;
+    let negativos = 0;
+    numeros.forEach(numero => {
+        if (numero > 0) {
+            positivos++;
+        } else if (numero < 0) {
+            negativos++;
+        }
+    });
+    return { positivos, negativos };
+}
+
+// Desafio 7: Encontrar o Maior Número em uma Lista
+function encontrarMaior(lista) {
+    let maior = lista[0];
+    let i = 1;
+    while (i < lista.length) {
+        if (lista[i] > maior) {
+            maior = lista[i];
+        }
+        i++;
+    }
+    return maior;
+}
+
+// Desafio 8: Inverter a Ordem de uma Lista
+function inverterLista(lista) {
+    let novaLista = [];
+    for (let i = lista.length - 1; i >= 0; i--) {
+        novaLista.push(lista[i]);
+    }
+    return novaLista;
+}
+
+// Desafio 9: Contar a Frequência de um Elemento em uma Lista
+function contarFrequencia(lista, elemento) {
+    let contador = 0;
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i] === elemento) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+// Desafio 10: Encontrar a Média de Números em uma Lista
+function calcularMedia(lista) {
+    let soma = lista.reduce((acc, cur) => acc + cur, 0);
+    return soma / lista.length;
+}
+
+console.log(`Soma dos pares até 10: ${somaPares(10)}`);
+console.log(`Fatorial de 5: ${calcularFatorial(5)}`);
+console.log('Tabuada do 5:');
+imprimirTabuada(5);
+// validarSenha();  // Descomente para executar no ambiente Node.js
+console.log('Triângulo de asteriscos com 5 linhas:');
+desenharTriangulo(5);
+console.log(`Contagem de positivos e negativos:`, contarPositivosNegativos([1, -1, 2, -2, 3, -3]));
+console.log(`Maior número na lista: ${encontrarMaior([1, 3, 2, 5, 4])}`);
+console.log(`Lista invertida:`, inverterLista([1, 2, 3, 4, 5]));
+console.log(`Frequência do número 3: ${contarFrequencia([1, 2, 3, 4, 3, 2, 1, 3, 3], 3)}`);
+console.log(`Média dos números na lista: ${calcularMedia([10, 20, 30, 40, 50])}`);
