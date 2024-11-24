@@ -1,0 +1,74 @@
+// Exercício 1: Cálculo de Média Aritmética
+function calcularMedia(nota1, nota2, nota3) {
+    const media = (nota1 + nota2 + nota3) / 3;
+    console.log(`Média aritmética: ${media.toFixed(2)}`);
+}
+calcularMedia(7, 8.5, 9);
+
+// Exercício 2: Cálculo do IMC
+function calcularIMC(peso, altura) {
+    const imc = peso / (altura * altura);
+    console.log(`IMC: ${imc.toFixed(2)}`);
+}
+calcularIMC(80, 1.80);
+
+// Exercício 3: Conversão de Unidades de Comprimento
+function converterMetros(metros) {
+    const centimetros = metros * 100;
+    const milimetros = metros * 1000;
+    console.log(`${metros} metros = ${centimetros} centímetros = ${milimetros} milímetros`);
+}
+converterMetros(1);
+
+// Exercício 4: Conversão de Moedas
+function converterMoeda(valorEmReais, taxaCambio = 5) {
+    const valorEmDolares = valorEmReais / taxaCambio;
+    console.log(`R$${valorEmReais} é igual a $${valorEmDolares.toFixed(2)} USD`);
+}
+converterMoeda(100);
+
+// Exercício 5: Conversão de Horas para Minutos e Segundos
+function converterHoras(horas) {
+    const minutos = horas * 60;
+    const segundos = horas * 3600;
+    console.log(`${horas} horas = ${minutos} minutos = ${segundos} segundos`);
+}
+converterHoras(2);
+
+// Exercício 6: Último Dígito de um Número
+function ultimoDigito(numero) {
+    const ultimo = numero % 10;
+    console.log(`O último dígito de ${numero} é ${ultimo}`);
+}
+ultimoDigito(367);
+
+// Exercício 7: Conversão de Velocidade
+function converterVelocidade(kmh) {
+    const ms = kmh / 3.6;
+    console.log(`${kmh} km/h é igual a ${ms.toFixed(2)} m/s`);
+}
+converterVelocidade(90);
+
+// Exercício 8: Cálculo de Juros Simples
+function calcularJurosSimples(principal, taxa, tempo) {
+    const juros = principal * (taxa / 100) * tempo;
+    console.log(`Juros simples: R$${juros.toFixed(2)}`);
+}
+calcularJurosSimples(1000, 3, 2);
+
+// Exercício 9: Conversão de Unidades de Tempo
+function converterDias(dias) {
+    const horas = dias * 24;
+    const minutos = horas * 60;
+    const segundos = minutos * 60;
+    console.log(`${dias} dias = ${horas} horas = ${minutos} minutos = ${segundos} segundos`);
+}
+converterDias(3);
+
+// Exercício 10: Cálculo de Perímetro e Área de um Retângulo
+function calcularPerimetroArea(largura, comprimento) {
+    const perimetro = 2 * (largura + comprimento);
+    const area = largura * comprimento;
+    console.log(`Perímetro: ${perimetro} m, Área: ${area} m²`);
+}
+calcularPerimetroArea(4, 7);
