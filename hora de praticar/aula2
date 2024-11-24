@@ -1,0 +1,133 @@
+// Desafio 1: Determinador de Vogal ou Consoante
+function determinarVogalConsoante(letra) {
+    const vogais = ['a', 'e', 'i', 'o', 'u'];
+    if (vogais.includes(letra.toLowerCase())) {
+        console.log(`A letra ${letra} é uma vogal`);
+    } else {
+        console.log(`A letra ${letra} é uma consoante`);
+    }
+}
+
+// Desafio 2: Tradutor de Dias da Semana
+function traduzirDiaSemana(diaEmIngles) {
+    const dias = {
+        "Monday": "Segunda-feira",
+        "Tuesday": "Terça-feira",
+        "Wednesday": "Quarta-feira",
+        "Thursday": "Quinta-feira",
+        "Friday": "Sexta-feira",
+        "Saturday": "Sábado",
+        "Sunday": "Domingo"
+    };
+    console.log(dias[diaEmIngles] || "Dia inválido");
+}
+
+// Desafio 3: Desconto Progressivo
+function calcularDesconto(precoOriginal, categoria) {
+    const descontos = {1: 0.10, 2: 0.20, 3: 0.30, 4: 0.40};
+    const desconto = descontos[categoria] || 0;
+    const precoFinal = precoOriginal * (1 - desconto);
+    console.log(`Preço Original: R$${precoOriginal.toFixed(2)}, Desconto: ${desconto * 100}%, Preço Final: R$${precoFinal.toFixed(2)}`);
+}
+
+// Desafio 4: Classificação de Idade
+function classificarIdade(idade) {
+    if (idade <= 12) {
+        console.log("Categoria: Criança");
+    } else if (idade <= 17) {
+        console.log("Categoria: Adolescente");
+    } else if (idade <= 64) {
+        console.log("Categoria: Adulto");
+    } else {
+        console.log("Categoria: Idoso");
+    }
+}
+
+// Desafio 5: Conversor de Notas em Letras
+function converterNotaEmLetra(nota) {
+    if (nota >= 90) return "Nota em letra: A";
+    if (nota >= 80) return "Nota em letra: B";
+    if (nota >= 70) return "Nota em letra: C";
+    if (nota >= 60) return "Nota em letra: D";
+    return "Nota em letra: F";
+}
+
+// Desafio 6: Calculadora de Nota de Participação
+function calcularNotaParticipacao(totalAulas, aulasParticipadas) {
+    const porcentagem = (aulasParticipadas / totalAulas) * 100;
+    if (porcentagem >= 100) return 10;
+    if (porcentagem >= 75) return 8;
+    if (porcentagem >= 50) return 6;
+    return 0;
+}
+
+// Desafio 7: Calculadora de Desconto Progressivo 2.0
+function calcularDescontoProgressivo(preco) {
+    let desconto;
+    if (preco <= 100) {
+        desconto = preco * 0.05;
+    } else if (preco <= 500) {
+        desconto = preco * 0.10;
+    } else {
+        desconto = preco * 0.15;
+    }
+    const precoFinal = preco - desconto;
+    console.log(`Preço original: R$${preco.toFixed(2)}, Desconto: R$${desconto.toFixed(2)}, Preço final: R$${precoFinal.toFixed(2)}`);
+}
+
+// Desafio 8: Classificação de IMC
+function calcularIMC(peso, altura) {
+    const imc = peso / (altura * altura);
+    console.log(`Seu IMC é ${imc.toFixed(2)}. Classificação: ${classificarIMC(imc)}`);
+}
+
+function classificarIMC(imc) {
+    if (imc < 18.5) return "Abaixo do peso";
+    if (imc <= 24.9) return "Peso normal";
+    if (imc <= 29.9) return "Sobrepeso";
+    return "Obesidade";
+}
+
+// Desafio 9: Classificação de Ano Bissexto
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
+// Desafio 10: Validação de Login
+function validarLogin(username, senha) {
+    return username === "admin" && senha === "1234";
+}
+
+// Desafio 11: Validação de Horário de Funcionamento
+function isStoreOpen(day, hour) {
+    if (day === "Domingo") return false;
+    if (day === "Sábado" && hour >= 9 && hour < 14) return true;
+    return hour >= 9 && hour < 18;
+}
+
+// Desafio 12: Verificador de Código Promocional
+function verificarCodigoPromocional(codigo, valorCompra) {
+    if (valorCompra > 50) {
+        if (codigo === "DESC10") {
+            return valorCompra * 0.90;
+        }
+        if (codigo === "PROMO20") {
+            return valorCompra * 0.80;
+        }
+    }
+    return "Código inválido ou compra insuficiente";
+}
+
+// Exemplo de chamada para cada função
+console.log(determinarVogalConsoante('e'));
+console.log(traduzirDiaSemana("Wednesday"));
+console.log(calcularDesconto(100, 2));
+classificarIdade(25);
+console.log(converterNotaEmLetra(88));
+console.log(calcularNotaParticipacao(20, 15));
+calcularDescontoProgressivo(250);
+console.log(calcularIMC(70, 1.75));
+console.log(isLeapYear(2024));
+console.log(validarLogin("admin", "1234"));
+console.log(isStoreOpen("sexta", 16));
+console.log(verificarCodigoPromocional("DESC10", 60));
