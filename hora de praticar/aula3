@@ -112,7 +112,7 @@ console.log(`Soma dos pares até 10: ${somaPares(10)}`);
 console.log(`Fatorial de 5: ${calcularFatorial(5)}`);
 console.log('Tabuada do 5:');
 imprimirTabuada(5);
-// validarSenha();  // Descomente para executar no ambiente Node.js
+validarSenha(); 
 console.log('Triângulo de asteriscos com 5 linhas:');
 desenharTriangulo(5);
 console.log(`Contagem de positivos e negativos:`, contarPositivosNegativos([1, -1, 2, -2, 3, -3]));
