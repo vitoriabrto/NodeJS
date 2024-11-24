@@ -1,0 +1,131 @@
+// Exercício 1: Calculadora de Área de Retângulo
+function calcularArea(largura, altura) {
+    return largura * altura;
+}
+console.log(`Área do retângulo: ${calcularArea(5, 10)}`);
+
+// Exercício 2: Conversor de Tempo
+function converterParaSegundos(horas, minutos) {
+    return (horas * 3600) + (minutos * 60);
+}
+console.log(`Total em segundos: ${converterParaSegundos(1, 30)}`);
+
+// Exercício 3: Média de números em um array
+function calcularMedia(numeros) {
+    const soma = numeros.reduce((acc, cur) => acc + cur, 0);
+    return soma / numeros.length;
+}
+console.log(`Média: ${calcularMedia([10, 20, 30, 40, 50])}`);
+
+// Exercício 4: Maior número em um array
+function encontrarMaior(numeros) {
+    return Math.max(...numeros);
+}
+console.log(`Maior número: ${encontrarMaior([5, 9, 23, 1, 45, 2])}`);
+
+// Exercício 5: Verifica se um número é primo
+function ehPrimo(numero) {
+    if (numero <= 1) return false;
+    for (let i = 2; i * i <= numero; i++) {
+        if (numero % i === 0) return false;
+    }
+    return true;
+}
+console.log(`É primo: ${ehPrimo(29)}`);
+
+// Exercício 6: Classe Pessoa com métodos de saudação
+class Pessoa {
+    constructor(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    cumprimentar() {
+        console.log(`Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`);
+    }
+}
+
+// Exercício 7: Classe Retangulo para calcular área e perímetro
+class Retangulo {
+    constructor(largura, altura) {
+        this.largura = largura;
+        this.altura = altura;
+    }
+
+    calcularArea() {
+        return this.largura * this.altura;
+    }
+
+    calcularPerimetro() {
+        return 2 * (this.largura + this.altura);
+    }
+}
+
+// Exercício 8: Classe Aluno com notas e cálculo de média
+class Aluno {
+    constructor(nome, notas) {
+        this.nome = nome;
+        this.notas = notas;
+    }
+
+    calcularMedia() {
+        return this.notas.reduce((acc, cur) => acc + cur, 0) / this.notas.length;
+    }
+}
+
+// Exercício 9: Classe ContaBancaria com depósitos e saques
+class ContaBancaria {
+    constructor(titular, saldoInicial = 0) {
+        this.titular = titular;
+        this.saldo = saldoInicial;
+    }
+
+    depositar(valor) {
+        this.saldo += valor;
+        console.log(`Depósito de R$${valor} realizado. Saldo atual: R$${this.saldo}.`);
+    }
+
+    sacar(valor) {
+        if (valor > this.saldo) {
+            console.log('Saldo insuficiente para o saque.');
+        } else {
+            this.saldo -= valor;
+            console.log(`Saque de R$${valor} realizado. Saldo atual: R$${this.saldo}.`);
+        }
+    }
+}
+
+// Exercício 10: Classe Turma com lista de alunos
+class Turma {
+    constructor(nome) {
+        this.nome = nome;
+        this.alunos = [];
+    }
+
+    adicionarAluno(aluno) {
+        this.alunos.push(aluno);
+    }
+
+    listarAlunos() {
+        console.log(`Alunos da turma ${this.nome}:`);
+        this.alunos.forEach(aluno => console.log(aluno.nome));
+    }
+}
+
+const pessoa = new Pessoa('Alice', 30);
+pessoa.cumprimentar();
+
+const retangulo = new Retangulo(5, 7);
+console.log(`Área do retângulo: ${retangulo.calcularArea()}, Perímetro: ${retangulo.calcularPerimetro()}`);
+
+const aluno = new Aluno('Lucas', [9, 8.5, 9.5, 7]);
+console.log(`Média do aluno: ${aluno.calcularMedia()}`);
+
+const conta = new ContaBancaria('Roberto', 500);
+conta.depositar(200);
+conta.sacar(150);
+
+const turma = new Turma('Turma A');
+turma.adicionarAluno(new Pessoa('Ana', 20));
+turma.adicionarAluno(new Pessoa('Pedro', 22));
+turma.listarAlunos();
